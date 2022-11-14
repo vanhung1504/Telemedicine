@@ -19,12 +19,31 @@ import Blogs from "./pages/Blogs/Blogs";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
-      <Route path="/" element={<Home />} />
-      <Route path="/signin" element={<Signin />} />
-      <Route path="/signup" element={<Signup />} />
-      <Route path="/blogs" element={<Blogs />} />
+      <Route
+        path="/"
+        element={<Home />}
+        errorElement={<div>Có gì đó không ổn!</div>}
+      />
+      <Route
+        path="/signin"
+        element={<Signin />}
+        errorElement={<div>Có gì đó không ổn!</div>}
+      />
+      <Route
+        path="/signup"
+        element={<Signup />}
+        errorElement={<div>Có gì đó không ổn!</div>}
+      />
+      <Route
+        path="/blogs"
+        element={<Blogs />}
+        errorElement={<div>Có gì đó không ổn!</div>}
+      />
     </Route>
-  )
+  ),
+  {
+    basename: import.meta.env.VITE_BASE_URL,
+  }
 );
 
 ReactDOM.createRoot(document.getElementById("root")).render(
