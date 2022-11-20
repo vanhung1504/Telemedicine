@@ -49,13 +49,14 @@ function Header() {
       path: "/#plans",
       label: "Pricing",
     },
-    {
-      path: "/#get-contact",
-      label: "Contact Us",
-    },
+
     {
       path: "/#faq",
       label: "FAQ",
+    },
+    {
+      path: "/#get-contact",
+      label: "Contact Us",
     },
     {
       path: "/blogs",
@@ -91,7 +92,10 @@ function Header() {
                 let menuEle = [];
                 if (!item.subMenu) {
                   menuEle.push(
-                    <li className="nav-item" key={index}>
+                    <li
+                      className={`nav-item ${styles["nav-item"]}`}
+                      key={index}
+                    >
                       <NavLink
                         className={({ isActive }) =>
                           !isActive
@@ -108,7 +112,10 @@ function Header() {
                   );
                 } else {
                   menuEle.push(
-                    <li className={`nav-item ${styles.dropdown}`} key={index}>
+                    <li
+                      className={`nav-item ${styles["nav-item"]} ${styles.dropdown} `}
+                      key={index}
+                    >
                       <a
                         className={`dropdown-toggle ${styles["nav-link"]} `}
                         id="navbarDropdown"
@@ -139,12 +146,16 @@ function Header() {
                 return menuEle;
               })}
 
-              <li className={`nav-item ${styles["nav-btn"]}`}>
+              <li
+                className={`nav-item ${styles["nav-item"]} ${styles["nav-btn"]}`}
+              >
                 <NavLink className={`${styles["nav-link"]}`} to="./signin">
                   Sign In
                 </NavLink>
               </li>
-              <li className={`nav-item ms-2 ${styles["nav-btn"]}`}>
+              <li
+                className={`nav-item ms-2 ${styles["nav-item"]} ${styles["nav-btn"]}`}
+              >
                 <NavLink className={`${styles["nav-link"]}`} to="./signup">
                   Sign Up
                 </NavLink>
